@@ -21,7 +21,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 5
+        return 15
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -109,9 +109,16 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 DispatchQueue.main.async {
                     
                     do{
-                        sleep(3)  // sleep to fetch and convert the images or else it thorws out of bound error
+                       sleep(3)  // sleep to fetch and convert the images or else it thorws out of bound error
+                    
+                    
+//                        _ = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false, block: { (Timer) in
+//                           
+//                        })
+                    
+                    
                     }
-                         self.Top10Table.reloadData()
+                        self.Top10Table.reloadData()
                    
                 }
                 

@@ -1,17 +1,16 @@
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
 //
-//  Model.swift
-//  IndiaTop10Songs
-//
-//  Created by IMCS2 on 12/28/19.
-//  Copyright © 2019 IMCS2. All rights reserved.
-//
+//   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
 
 import Foundation
 
+// MARK: - Welcome
 struct Welcome: Codable {
     let feed: Feed
 }
 
+// MARK: - Feed
 struct Feed: Codable {
     let title: String
     let id: String
@@ -23,11 +22,13 @@ struct Feed: Codable {
     let results: [Result]
 }
 
+// MARK: - Author
 struct Author: Codable {
     let name: String
     let uri: String
 }
 
+// MARK: - Link
 struct Link: Codable {
     let linkSelf: String?
     let alternate: String?
@@ -38,9 +39,11 @@ struct Link: Codable {
     }
 }
 
+// MARK: - Result
 struct Result: Codable {
-    let artistName, id, releaseDate, name: String
-    let collectionName: String
+    let artistName, id: String
+    let releaseDate: String?
+    let name, collectionName: String
     let kind: Kind
     let copyright, artistID: String
     let artistURL: String
@@ -56,6 +59,7 @@ struct Result: Codable {
     }
 }
 
+// MARK: - Genre
 struct Genre: Codable {
     let genreID, name: String
     let url: String
